@@ -12,17 +12,21 @@ public class Main {
         String[] romanarray = {"I" , "II", "III", "IV", "V", "VI","VII","VIII","IX","X","XI","XII","XIII","XIV","XV","XVI","XVII","XVIII","XIX","XX","XXI"};
         String[] romanhundredarray = {"I" , "II", "III", "IV", "V", "VI","VII","VIII","IX","X","L","C"};
         int[] numbarray = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
-
-        num1 = array[0].charAt(0);
-        num2 = array[2].charAt(0);
-
+        try {
+            num1 = array[0].charAt(0);
+            num2 = array[2].charAt(0);
+        }
+        catch (Exception e){
+            throw new ArithmeticException("throws Exception //т.к. строка не является математической операцией");
+        }
+        
             if (Character.isDigit(num1)) {
                 if (Character.isDigit(num2)) {
                     arabiccheker(array);
                     arabicoutput(array);
                 }
                 else{
-                    throw new ArithmeticException();
+                   throw new ArithmeticException("throws Exception //т.к. используются одновременно разные системы счисления");
                 }
             }
             else if(true){
